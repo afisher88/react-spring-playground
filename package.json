@@ -2,11 +2,12 @@
   "name": "react-spring-playground",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./pages/index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "static": "next export"
   },
   "repository": {
     "type": "git",
