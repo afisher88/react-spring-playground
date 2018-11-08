@@ -1,10 +1,6 @@
 import React, { PureComponent } from 'react';
 import { animated, Transition } from 'react-spring';
-import '../stylesheets/pages/mount-unmount.scss';
-
-const TheBox = () => {
-  return <div className="the-box">THE BOX</div>
-}
+import { TheBox, PageHeader, BackBar, TransitionContainer, ControlContainer } from '../components';
 
 export default class MountUnmount extends PureComponent {
   constructor() {
@@ -25,21 +21,40 @@ export default class MountUnmount extends PureComponent {
     const { show } = this.state;
 
     return (
-      <main>
-        <h1>Mount / Unmount</h1>
+      <main className="container">
+        <PageHeader title="Mount / Unmount" />
 
-        <button onClick={this.toggle}>{show ? 'Hide' : 'Release'} the box!</button>
+        <BackBar />
 
-        <Transition
-          native
-          items={show}
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}>
-          {show =>
-            show && (props => <animated.div style={props}><TheBox props={props} /></animated.div>)
-          }
-        </Transition>
+        <ControlContainer>
+          <button className="button-primary" onClick={this.toggle}>{show ? 'Hide' : 'Release'} the box!</button>
+        </ControlContainer>
+
+        <TransitionContainer title="Fade the box">
+          <Transition
+            native
+            items={show}
+            from={{ opacity: 0 }}
+            enter={{ opacity: 1 }}
+            leave={{ opacity: 0 }}>
+            {show =>
+              show && (props => <animated.div style={props}><TheBox props={props} /></animated.div>)
+            }
+          </Transition>
+        </TransitionContainer>
+
+        <TransitionContainer title="Slide the box">
+          <Transition
+            native
+            items={show}
+            from={{ transform: 'translate3d(-100%,0,0)' }}
+            enter={{ transform: 'translate3d(0,0px,0)' }}
+            leave={{ transform: 'translate3d(-500%,0,0)' }}>
+            {show =>
+              show && (props => <animated.div style={props}><TheBox props={props} /></animated.div>)
+            }
+          </Transition>
+        </TransitionContainer>
       </main>
     )
   }

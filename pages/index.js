@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-
+import { PageHeader } from '../components';
+import '../stylesheets/normalize.scss';
+import '../stylesheets/skeleton.scss';
 export default class App extends Component {
   render() {
     return (
-      <main>
-        <h1>React Spring - Animation Testbed</h1>
-        <ol>
-          <li>
-            <Link href="/mount-unmount">
-              <a>Mount / Unmount transition</a>
-            </Link>
-          </li>
-        </ol>
+      <main className="container">
+        <PageHeader title="React Spring: Animation Testbed" />
+        <nav>
+          <ol>
+            <li>
+              <Link href="/mount-unmount">
+                <a>Mount / Unmount transition</a>
+              </Link>
+            </li>
+          </ol>
+        </nav>
       </main>
     )
   }
