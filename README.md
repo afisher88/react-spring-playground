@@ -1,6 +1,6 @@
 # react-spring: Animation playground
 
-This uses [NextJS](https://nextjs.org/) as a base for quickstart.
+This uses [NextJS](https://nextjs.org/) as a base for quickstart the styles are provided by [Skeleton CSS](http://getskeleton.com/).
 
 Setup:
 
