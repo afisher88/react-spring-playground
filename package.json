@@ -21,6 +21,7 @@
   "homepage": "https://github.com/afisher88/react-spring-playground#readme",
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
+    "classnames": "^2.2.6",
     "next": "^7.0.2",
     "node-sass": "^4.10.0",
     "react": "^16.6.1",

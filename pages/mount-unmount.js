@@ -30,13 +30,13 @@ export default class MountUnmount extends PureComponent {
           <button className="button-primary" onClick={this.toggle}>{show ? 'Hide' : 'Release'} the box!</button>
         </ControlContainer>
 
-        <TransitionContainer title="Multistage the box">
+        <TransitionContainer title="Multistage the box" noMinHeight>
           <Transition
             native
             items={show}
             from={{ opacity: 0, height: 0 }}
-            enter={{ opacity: 1, height: 'auto' }}
-            leave={{ opacity: 0, height: 0 }}>
+            enter={[{ height: 'auto' }, { opacity: 1 }]}
+            leave={[{ opacity: 0 }, { height: 0 }]}>
             {show =>
               show && (props => <animated.div style={props}><TheBox props={props} /></animated.div>)
             }
@@ -68,7 +68,7 @@ export default class MountUnmount extends PureComponent {
             }
           </Transition>
         </TransitionContainer>
-      </main>
+      </main >
     )
   }
 }

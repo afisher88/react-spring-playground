@@ -2,7 +2,13 @@
   margin: 2rem 0;
   padding: 1rem 0;
 
-  &__inner {
+  .transition-container__inner {
     min-height: 150px; // Box height
+  }
+}
+
+.transition-container--no-min-height {
+  .transition-container__inner {
+    min-height: 0;
   }
 }
