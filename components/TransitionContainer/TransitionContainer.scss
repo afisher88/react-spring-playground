@@ -7,6 +7,17 @@
   }
 }
 
+.transition-container__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .transition-container__heading {
+    margin-right: 2rem;
+  }
+}
+
 .transition-container--no-min-height {
   .transition-container__inner {
     min-height: 0;

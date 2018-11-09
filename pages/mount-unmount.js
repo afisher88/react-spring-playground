@@ -1,39 +1,41 @@
 import React, { PureComponent } from 'react';
 import { animated, Transition } from 'react-spring';
-import { TheBox, PageHeader, BackBar, TransitionContainer, ControlContainer } from '../components';
+import { TheBox, PageHeader, BackBar, TransitionContainer } from '../components';
 
 export default class MountUnmount extends PureComponent {
   constructor() {
     super();
 
     this.state = {
-      show: false
+      multistage: false,
+      fade: false,
+      slide: false
     }
   }
 
-  toggle = () => {
+  toggle = (transitionName) => {
     this.setState({
-      show: !this.state.show
+      [transitionName]: !this.state[transitionName]
     })
   }
 
   render() {
-    const { show } = this.state;
-
     return (
       <main className="container">
         <PageHeader title="Mount / Unmount" />
 
         <BackBar />
 
-        <ControlContainer>
-          <button className="button-primary" onClick={this.toggle}>{show ? 'Hide' : 'Release'} the box!</button>
-        </ControlContainer>
-
-        <TransitionContainer title="Multistage the box" noMinHeight>
+        <TransitionContainer
+          title="Multistage the box"
+          btnClickFn={this.toggle}
+          transitionName="multistage"
+          toggleState={this.state.multistage}
+          noMinHeight
+        >
           <Transition
             native
-            items={show}
+            items={this.state.multistage}
             from={{ opacity: 0, height: 0 }}
             enter={[{ height: 'auto' }, { opacity: 1 }]}
             leave={[{ opacity: 0 }, { height: 0 }]}>
@@ -43,10 +45,15 @@ export default class MountUnmount extends PureComponent {
           </Transition>
         </TransitionContainer>
 
-        <TransitionContainer title="Fade the box">
+        <TransitionContainer
+          title="Fade the box"
+          btnClickFn={this.toggle}
+          transitionName="fade"
+          toggleState={this.state.fade}
+        >
           <Transition
             native
-            items={show}
+            items={this.state.fade}
             from={{ opacity: 0 }}
             enter={{ opacity: 1 }}
             leave={{ opacity: 0 }}>
@@ -56,10 +63,15 @@ export default class MountUnmount extends PureComponent {
           </Transition>
         </TransitionContainer>
 
-        <TransitionContainer title="Slide the box">
+        <TransitionContainer
+          title="Slide the box"
+          btnClickFn={this.toggle}
+          transitionName="slide"
+          toggleState={this.state.slide}
+        >
           <Transition
             native
-            items={show}
+            items={this.state.slide}
             from={{ transform: 'translate3d(-100%,0,0)' }}
             enter={{ transform: 'translate3d(0,0,0)' }}
             leave={{ transform: 'translate3d(-500%,0,0)' }}>
