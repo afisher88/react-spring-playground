@@ -80,7 +80,7 @@ export default class MountUnmount extends PureComponent {
             }
           </Transition>
         </TransitionContainer>
-      </main >
+      </main>
     )
   }
 }

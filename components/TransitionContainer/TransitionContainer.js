@@ -7,7 +7,7 @@ const Btn = ({ transitionName, btnClickFn, toggleState }) => {
     btnClickFn(transitionName);
   }
 
-  return <button className="button-primary" onClick={clickHandler}>{toggleState ? 'Hide' : 'Release'} the box!</button>
+  return <button type="button" className="button-primary" onClick={clickHandler}>{toggleState ? 'Hide' : 'Release'} the box!</button>
 }
 
 export function TransitionContainer({ title, children, noMinHeight, btnClickFn, transitionName, toggleState }) {

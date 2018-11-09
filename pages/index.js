@@ -12,7 +12,12 @@ export default class App extends Component {
           <ol>
             <li>
               <Link href="/mount-unmount">
-                <a>Mount / Unmount transition</a>
+                <a>Mount / Unmount transitions</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/update">
+                <a>Update transitions</a>
               </Link>
             </li>
           </ol>
