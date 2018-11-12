@@ -1,3 +1,39 @@
+.page-header {
+  padding: 2rem 0;
+  margin-bottom: 1rem; }
+
+.backbar {
+  padding: 1rem;
+  background: #f1f1f1;
+  margin: 1rem 0; }
+
+.the-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 5rem;
+  background: #f1f1f1;
+  font-weight: 700;
+  font-size: 2rem; }
+
+.transition-container {
+  margin: 2rem 0;
+  padding: 1rem 0; }
+  .transition-container .transition-container__inner {
+    min-height: 150px; }
+
+.transition-container__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
+  .transition-container__header .transition-container__heading {
+    margin-right: 2rem; }
+
+.transition-container--no-min-height .transition-container__inner {
+  min-height: 0; }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 * {
   box-sizing: border-box; }
@@ -358,6 +394,21 @@ table {
 td,
 th {
   padding: 0; }
+
+.table-with-sidepane {
+  position: relative;
+  overflow: hidden; }
+
+.table-with-sidepane__main {
+  width: 70%; }
+
+.sidepane-animation-container {
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 30%;
+  background: #f1f1f1;
+  padding: 1rem; }
 
 @charset "UTF-8";
 /*
@@ -826,57 +877,6 @@ there.
 /* Larger than tablet */
 /* Larger than desktop */
 /* Larger than Desktop HD */
-
-.page-header {
-  padding: 2rem 0;
-  margin-bottom: 1rem; }
-
-.backbar {
-  padding: 1rem;
-  background: #f1f1f1;
-  margin: 1rem 0; }
-
-.the-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  padding: 5rem;
-  background: #f1f1f1;
-  font-weight: 700;
-  font-size: 2rem; }
-
-.transition-container {
-  margin: 2rem 0;
-  padding: 1rem 0; }
-  .transition-container .transition-container__inner {
-    min-height: 150px; }
-
-.transition-container__header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center; }
-  .transition-container__header .transition-container__heading {
-    margin-right: 2rem; }
-
-.transition-container--no-min-height .transition-container__inner {
-  min-height: 0; }
-
-.table-with-sidepane {
-  position: relative;
-  overflow: hidden; }
-
-.table-with-sidepane__main {
-  width: 70%; }
-
-.sidepane-animation-container {
-  top: 0;
-  right: 0;
-  position: absolute;
-  width: 30%;
-  background: #f1f1f1;
-  padding: 1rem; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
