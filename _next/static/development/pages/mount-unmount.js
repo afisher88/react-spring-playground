@@ -132,21 +132,20 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Sidepane).call(this));
     _this.openConfigEnter = {
-      transform: 'translate3d(0,0,0)'
+      transform: 'translate3d(0,0,0)',
+      opacity: 1
     };
     _this.openConfigLeave = {
-      transform: 'translate3d(100%,0,0)'
+      transform: 'translate3d(100%,0,0)',
+      opacity: 1
     };
     _this.updateConfigEnter = [{
-      opacity: 0,
-      transform: 'translate3d(0,0,0)'
+      opacity: 0
     }, {
-      opacity: 1,
-      transform: 'translate3d(0,0,0)'
+      opacity: 1
     }];
     _this.updateConfigLeave = [{
-      opacity: 0,
-      transform: 'translate3d(0,0,0)'
+      opacity: 0
     }];
     return _this;
   }
@@ -154,18 +153,16 @@ function (_Component) {
   _createClass(Sidepane, [{
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextProps) {
-      var _this$props = this.props,
-          activeRowIndex = _this$props.activeRowIndex,
-          tableData = _this$props.tableData;
+      var activeRowIndex = this.props.activeRowIndex;
       return activeRowIndex !== nextProps.activeRowIndex;
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          activeRowIndex = _this$props2.activeRowIndex,
-          tableData = _this$props2.tableData,
-          hasUpdated = _this$props2.hasUpdated;
+      var _this$props = this.props,
+          activeRowIndex = _this$props.activeRowIndex,
+          tableData = _this$props.tableData,
+          hasUpdated = _this$props.hasUpdated;
       var enter = this.updateConfigEnter;
       var leave = this.updateConfigLeave;
 
@@ -182,7 +179,7 @@ function (_Component) {
         leave: leave,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 33
         },
         __self: this
       }, function (activeRowIndex) {
@@ -192,26 +189,26 @@ function (_Component) {
             style: props,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 43
+              lineNumber: 42
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
             className: "sidepane",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 44
+              lineNumber: 43
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 45
+              lineNumber: 44
             },
             __self: this
           }, tableData[activeRowIndex].name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 46
+              lineNumber: 45
             },
             __self: this
           }, "".concat(tableData[activeRowIndex].name, " is a ").concat(tableData[activeRowIndex].age, " year old ").concat(tableData[activeRowIndex].job, " living in ").concat(tableData[activeRowIndex].location, "."))));
@@ -293,7 +290,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
- // import { capitalize } from 'lodash-es';
 
 
 
@@ -309,6 +305,10 @@ function (_PureComponent) {
     _classCallCheck(this, TableWithSidepane);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TableWithSidepane).call(this));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "capitalize", function (string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setActiveRowIndex", function (rowIndex) {
       _this.setState({
@@ -341,33 +341,33 @@ function (_PureComponent) {
         className: "table-with-sidepane",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 36
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "table-with-sidepane__main",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 37
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "u-full-width",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 38
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 39
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 40
         },
         __self: this
       }, _TableData__WEBPACK_IMPORTED_MODULE_1__["default"].map(function (row, i) {
@@ -375,14 +375,14 @@ function (_PureComponent) {
           key: "table-heading-".concat(i),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 43
           },
           __self: this
-        }, Object.keys(row)[i]);
+        }, _this2.capitalize(Object.keys(row)[i]));
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 48
         },
         __self: this
       }, _TableData__WEBPACK_IMPORTED_MODULE_1__["default"].map(function (row, i) {
@@ -390,25 +390,25 @@ function (_PureComponent) {
           key: "table-row-".concat(i),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 51
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 52
           },
           __self: this
         }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 53
           },
           __self: this
         }, row.job), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 54
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -416,7 +416,7 @@ function (_PureComponent) {
           onClick: _this2.setActiveRowIndex.bind(_this2, i),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 54
           },
           __self: this
         }, "Show more info for ", row.name)));
@@ -426,7 +426,7 @@ function (_PureComponent) {
         hasUpdated: btnClicked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 62
         },
         __self: this
       }));
@@ -14444,7 +14444,7 @@ function (_PureComponent) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 12:
 /*!**************************************!*\
   !*** multi ./pages/mount-unmount.js ***!
   \**************************************/
@@ -14469,5 +14469,5 @@ module.exports = dll_ecba6b44147cc8018369;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]));;
+},[[12,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=mount-unmount.js.map
