@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/afisher88/react-spring-playground#readme",
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.6",
-    "lodash-es": "^4.17.11",
     "next": "^7.0.2",
     "next-prefixed": "0.0.5",
     "node-sass": "^4.10.0",

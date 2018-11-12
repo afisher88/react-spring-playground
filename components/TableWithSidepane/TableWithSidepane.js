@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-// import { capitalize } from 'lodash-es';
 import tableData from './TableData';
 import Sidepane from './Sidepane';
 import './Sidepane.scss';
@@ -12,6 +11,10 @@ export class TableWithSidepane extends PureComponent {
       activeRowIndex: null,
       btnClicked: false
     }
+  }
+
+  capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   setActiveRowIndex = (rowIndex) => {
@@ -37,7 +40,7 @@ export class TableWithSidepane extends PureComponent {
               <tr>
                 {tableData.map((row, i) => {
                   return (
-                    <th key={`table-heading-${i}`}>{Object.keys(row)[i]}</th>
+                    <th key={`table-heading-${i}`}>{this.capitalize(Object.keys(row)[i])}</th>
                   )
                 })}
               </tr>

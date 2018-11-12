@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import { animated, config, Transition } from 'react-spring';
-
+import { animated, Transition } from 'react-spring';
 export default class Sidepane extends Component {
   constructor() {
     super();
 
-    this.openConfigEnter = { transform: 'translate3d(0,0,0)' };
-    this.openConfigLeave = { transform: 'translate3d(100%,0,0)' };
-    this.updateConfigEnter = [{ opacity: 0, transform: 'translate3d(0,0,0)' }, { opacity: 1, transform: 'translate3d(0,0,0)' }];
-    this.updateConfigLeave = [{ opacity: 0, transform: 'translate3d(0,0,0)' }];
+    this.openConfigEnter = { transform: 'translate3d(0,0,0)', opacity: 1 };
+    this.openConfigLeave = { transform: 'translate3d(100%,0,0)', opacity: 1 };
+    this.updateConfigEnter = [{ opacity: 0 }, { opacity: 1 }];
+    this.updateConfigLeave = [{ opacity: 0 }];
   }
 
 
   shouldComponentUpdate(nextProps) {
-    const { activeRowIndex, tableData } = this.props;
+    const { activeRowIndex } = this.props;
 
     return activeRowIndex !== nextProps.activeRowIndex;
   }
