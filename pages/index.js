@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
+import { Link } from 'next-prefixed';
 import { PageHeader } from '../components';
 import MainLayout from '../layouts/MainLayout';
 export default class App extends Component {

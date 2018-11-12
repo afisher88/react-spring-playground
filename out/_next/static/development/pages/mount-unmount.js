@@ -1,4 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\update.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\mount-unmount.js"],{
 
 /***/ "./components/BackBar/BackBar.js":
 /*!***************************************!*\
@@ -13294,21 +13294,22 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/update.js":
-/*!*************************!*\
-  !*** ./pages/update.js ***!
-  \*************************/
+/***/ "./pages/mount-unmount.js":
+/*!********************************!*\
+  !*** ./pages/mount-unmount.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Update; });
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MountUnmount; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _layouts_MainLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layouts/MainLayout */ "./layouts/MainLayout.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./components/index.js");
-var _jsxFileName = "C:\\Users\\Anthony.Fisher\\Dev Sandbox\\react-spring-playground\\pages\\update.js";
+/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-spring */ "./node_modules/react-spring/dist/web.js");
+/* harmony import */ var _layouts_MainLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layouts/MainLayout */ "./layouts/MainLayout.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./components/index.js");
+var _jsxFileName = "C:\\Users\\Anthony.Fisher\\Dev Sandbox\\react-spring-playground\\pages\\mount-unmount.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -13334,63 +13335,199 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var Update =
+
+var MountUnmount =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(Update, _PureComponent);
+  _inherits(MountUnmount, _PureComponent);
 
-  function Update() {
+  function MountUnmount() {
     var _this;
 
-    _classCallCheck(this, Update);
+    _classCallCheck(this, MountUnmount);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Update).call(this));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(MountUnmount).call(this));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "toggle", function () {
-      _this.setState({
-        show: !_this.state.show
-      });
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "toggle", function (transitionName) {
+      _this.setState(_defineProperty({}, transitionName, !_this.state[transitionName]));
     });
 
     _this.state = {
-      show: false
+      multistage: false,
+      fade: false,
+      slide: false
     };
     return _this;
   }
 
-  _createClass(Update, [{
+  _createClass(MountUnmount, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["PageHeader"], {
-        title: "Update",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["BackBar"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 25
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["TableWithSidepane"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["PageHeader"], {
+        title: "Mount / Unmount",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 26
         },
         __self: this
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["BackBar"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["TransitionContainer"], {
+        title: "Multistage the box",
+        btnClickFn: this.toggle,
+        transitionName: "multistage",
+        toggleState: this.state.multistage,
+        noMinHeight: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["Transition"], {
+        native: true,
+        items: this.state.multistage,
+        from: {
+          opacity: 0,
+          height: 0
+        },
+        enter: [{
+          height: 'auto'
+        }, {
+          opacity: 1
+        }],
+        leave: [{
+          opacity: 0
+        }, {
+          height: 0
+        }],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, function (show) {
+        return show && function (props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
+            style: props,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 44
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["TheBox"], {
+            props: props,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 44
+            },
+            __self: this
+          }));
+        };
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["TransitionContainer"], {
+        title: "Fade the box",
+        btnClickFn: this.toggle,
+        transitionName: "fade",
+        toggleState: this.state.fade,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["Transition"], {
+        native: true,
+        items: this.state.fade,
+        from: {
+          opacity: 0
+        },
+        enter: {
+          opacity: 1
+        },
+        leave: {
+          opacity: 0
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, function (show) {
+        return show && function (props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
+            style: props,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 62
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["TheBox"], {
+            props: props,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 62
+            },
+            __self: this
+          }));
+        };
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["TransitionContainer"], {
+        title: "Slide the box",
+        btnClickFn: this.toggle,
+        transitionName: "slide",
+        toggleState: this.state.slide,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["Transition"], {
+        native: true,
+        items: this.state.slide,
+        from: {
+          transform: 'translate3d(-100%,0,0)'
+        },
+        enter: {
+          transform: 'translate3d(0,0,0)'
+        },
+        leave: {
+          transform: 'translate3d(-500%,0,0)'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, function (show) {
+        return show && function (props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
+            style: props,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 80
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["TheBox"], {
+            props: props,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 80
+            },
+            __self: this
+          }));
+        };
+      })));
     }
   }]);
 
-  return Update;
+  return MountUnmount;
 }(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
 
 
@@ -13410,21 +13547,21 @@ function (_PureComponent) {
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/update")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/mount-unmount")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
-/***/ 3:
-/*!*******************************!*\
-  !*** multi ./pages/update.js ***!
-  \*******************************/
+/***/ 12:
+/*!**************************************!*\
+  !*** multi ./pages/mount-unmount.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__NEXT_REGISTER_PAGE('/update', function() {
-module.exports = __webpack_require__(/*! ./pages/update.js */"./pages/update.js");
+__NEXT_REGISTER_PAGE('/mount-unmount', function() {
+module.exports = __webpack_require__(/*! ./pages/mount-unmount.js */"./pages/mount-unmount.js");
 
 return { page: module.exports.default }});
 
@@ -13441,5 +13578,5 @@ module.exports = dll_ecba6b44147cc8018369;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]));;
-//# sourceMappingURL=update.js.map
+},[[12,"static/runtime/webpack.js","styles"]]]));;
+//# sourceMappingURL=mount-unmount.js.map
