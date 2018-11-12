@@ -17,6 +17,49 @@
   font-weight: 700;
   font-size: 2rem; }
 
+.transition-container {
+  margin: 2rem 0;
+  padding: 1rem 0; }
+  .transition-container .transition-container__inner {
+    min-height: 150px; }
+
+.transition-container__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
+  .transition-container__header .transition-container__heading {
+    margin-right: 2rem; }
+
+.transition-container--no-min-height .transition-container__inner {
+  min-height: 0; }
+
+.table-with-sidepane {
+  position: relative;
+  overflow: hidden; }
+
+.sidepane-animation-container {
+  background: #f1f1f1;
+  padding: 1rem; }
+
+.table-with-sidepane__main {
+  overflow: auto;
+  margin-bottom: 1rem; }
+
+@media all and (min-width: 1200px) {
+  .table-with-sidepane__main {
+    width: 70%;
+    margin: 0;
+    padding-right: 1rem; }
+    .table-with-sidepane__main table {
+      margin: 0; }
+  .sidepane-animation-container {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    width: 30%; } }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 * {
   box-sizing: border-box; }
@@ -377,23 +420,6 @@ table {
 td,
 th {
   padding: 0; }
-
-.transition-container {
-  margin: 2rem 0;
-  padding: 1rem 0; }
-  .transition-container .transition-container__inner {
-    min-height: 150px; }
-
-.transition-container__header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center; }
-  .transition-container__header .transition-container__heading {
-    margin-right: 2rem; }
-
-.transition-container--no-min-height .transition-container__inner {
-  min-height: 0; }
 
 @charset "UTF-8";
 /*
@@ -862,32 +888,6 @@ there.
 /* Larger than tablet */
 /* Larger than desktop */
 /* Larger than Desktop HD */
-
-.table-with-sidepane {
-  position: relative;
-  overflow: hidden; }
-
-.sidepane-animation-container {
-  background: #f1f1f1;
-  padding: 1rem; }
-
-.table-with-sidepane__main {
-  overflow: auto;
-  margin-bottom: 1rem; }
-
-@media all and (min-width: 1200px) {
-  .table-with-sidepane__main {
-    width: 70%;
-    margin: 0;
-    padding-right: 1rem; }
-    .table-with-sidepane__main table {
-      margin: 0; }
-  .sidepane-animation-container {
-    top: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    width: 30%; } }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
