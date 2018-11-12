@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { PageHeader } from '../components';
-import '../stylesheets/normalize.scss';
-import '../stylesheets/skeleton.scss';
+import MainLayout from '../layouts/MainLayout';
 export default class App extends Component {
   render() {
     return (
-      <main className="container">
+      <MainLayout>
         <PageHeader title="React Spring: Animation Testbed" />
         <nav>
           <ol>
@@ -22,7 +21,7 @@ export default class App extends Component {
             </li>
           </ol>
         </nav>
-      </main>
+      </MainLayout>
     )
   }
 }

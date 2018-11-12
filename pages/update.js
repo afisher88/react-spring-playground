@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import MainLayout from '../layouts/MainLayout';
 import { PageHeader, BackBar, TableWithSidepane } from '../components';
 
 export default class Update extends PureComponent {
@@ -18,13 +19,13 @@ export default class Update extends PureComponent {
 
   render() {
     return (
-      <main className="container">
+      <MainLayout>
         <PageHeader title="Update" />
 
         <BackBar />
 
         <TableWithSidepane />
-      </main>
+      </MainLayout>
     )
   }
 }

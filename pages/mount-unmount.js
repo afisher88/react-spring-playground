@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { animated, Transition } from 'react-spring';
+import MainLayout from '../layouts/MainLayout';
 import { TheBox, PageHeader, BackBar, TransitionContainer } from '../components';
 
 export default class MountUnmount extends PureComponent {
@@ -21,7 +22,7 @@ export default class MountUnmount extends PureComponent {
 
   render() {
     return (
-      <main className="container">
+      <MainLayout>
         <PageHeader title="Mount / Unmount" />
 
         <BackBar />
@@ -80,7 +81,7 @@ export default class MountUnmount extends PureComponent {
             }
           </Transition>
         </TransitionContainer>
-      </main>
+      </MainLayout>
     )
   }
 }
