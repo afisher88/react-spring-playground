@@ -5,7 +5,7 @@ import MainLayout from '../layouts/MainLayout';
 export default class App extends Component {
   render() {
     return (
-      <MainLayout>
+      <MainLayout pageTitle="React Spring: Animation Testbed">
         <PageHeader title="React Spring: Animation Testbed" />
         <nav>
           <ol>

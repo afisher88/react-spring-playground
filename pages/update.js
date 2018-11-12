@@ -19,7 +19,7 @@ export default class Update extends PureComponent {
 
   render() {
     return (
-      <MainLayout>
+      <MainLayout pageTitle="React Spring: Animation Testbed - Update">
         <PageHeader title="Update" />
 
         <BackBar />

@@ -22,7 +22,7 @@ export default class MountUnmount extends PureComponent {
 
   render() {
     return (
-      <MainLayout>
+      <MainLayout pageTitle="React Spring: Animation Testbed - Mount / Unmount">
         <PageHeader title="Mount / Unmount" />
 
         <BackBar />
