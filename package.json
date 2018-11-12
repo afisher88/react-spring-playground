@@ -1,7 +1,7 @@
 {
   "name": "react-spring-playground",
   "version": "1.0.0",
-  "description": "",
+  "description": "A playground for react-spring animations",
   "main": "./pages/index.js",
   "scripts": {
     "dev": "next",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/afisher88/react-spring-playground.git"
   },
-  "author": "",
+  "author": "Anthony Fisher",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/afisher88/react-spring-playground/issues"
