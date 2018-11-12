@@ -3,8 +3,8 @@ import { animated, config, Transition } from 'react-spring';
 
 const openConfigEnter = { transform: 'translate3d(0,0,0)' };
 const openConfigLeave = { transform: 'translate3d(100%,0,0)' };
-const updateConfigEnter = { opacity: 1, transform: 'translate3d(0,0,0)' };
-const updateConfigLeave = { opacity: 0, transform: 'translate3d(0,0,0)' };
+const updateConfigEnter = [{ opacity: 0, transform: 'translate3d(0,0,0)' },{ opacity: 1, transform: 'translate3d(0,0,0)' }];
+const updateConfigLeave = [{ opacity: 0, transform: 'translate3d(0,0,0)' }];
 
 export default function Sidepane({ activeRowIndex, tableData, hasUpdated }) {
   let enter = updateConfigEnter;
