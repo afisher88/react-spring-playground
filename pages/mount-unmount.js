@@ -1,7 +1,12 @@
 import React, { PureComponent } from 'react';
-import { animated, Transition } from 'react-spring';
+import { animated, Transition } from 'react-spring/renderprops.cjs';
 import MainLayout from '../layouts/MainLayout';
-import { TheBox, PageHeader, BackBar, TransitionContainer } from '../components';
+import {
+  TheBox,
+  PageHeader,
+  BackBar,
+  TransitionContainer
+} from '../components';
 
 export default class MountUnmount extends PureComponent {
   constructor() {
@@ -11,14 +16,14 @@ export default class MountUnmount extends PureComponent {
       multistage: false,
       fade: false,
       slide: false
-    }
+    };
   }
 
-  toggle = (transitionName) => {
+  toggle = transitionName => {
     this.setState({
       [transitionName]: !this.state[transitionName]
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -39,9 +44,15 @@ export default class MountUnmount extends PureComponent {
             items={this.state.multistage}
             from={{ opacity: 0, height: 0 }}
             enter={[{ height: 'auto' }, { opacity: 1 }]}
-            leave={[{ opacity: 0 }, { height: 0 }]}>
+            leave={[{ opacity: 0 }, { height: 0 }]}
+          >
             {show =>
-              show && (props => <animated.div style={props}><TheBox props={props} /></animated.div>)
+              show &&
+              (props => (
+                <animated.div style={props}>
+                  <TheBox props={props} />
+                </animated.div>
+              ))
             }
           </Transition>
         </TransitionContainer>
@@ -57,9 +68,15 @@ export default class MountUnmount extends PureComponent {
             items={this.state.fade}
             from={{ opacity: 0 }}
             enter={{ opacity: 1 }}
-            leave={{ opacity: 0 }}>
+            leave={{ opacity: 0 }}
+          >
             {show =>
-              show && (props => <animated.div style={props}><TheBox props={props} /></animated.div>)
+              show &&
+              (props => (
+                <animated.div style={props}>
+                  <TheBox props={props} />
+                </animated.div>
+              ))
             }
           </Transition>
         </TransitionContainer>
@@ -75,13 +92,19 @@ export default class MountUnmount extends PureComponent {
             items={this.state.slide}
             from={{ transform: 'translate3d(-100%,0,0)' }}
             enter={{ transform: 'translate3d(0,0,0)' }}
-            leave={{ transform: 'translate3d(-500%,0,0)' }}>
+            leave={{ transform: 'translate3d(-500%,0,0)' }}
+          >
             {show =>
-              show && (props => <animated.div style={props}><TheBox props={props} /></animated.div>)
+              show &&
+              (props => (
+                <animated.div style={props}>
+                  <TheBox props={props} />
+                </animated.div>
+              ))
             }
           </Transition>
         </TransitionContainer>
       </MainLayout>
-    )
+    );
   }
 }

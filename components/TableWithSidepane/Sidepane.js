@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { animated, Transition } from 'react-spring';
+import { animated, Transition } from 'react-spring/renderprops.cjs';
 export default class Sidepane extends Component {
   constructor() {
     super();
@@ -10,13 +10,11 @@ export default class Sidepane extends Component {
     this.updateConfigLeave = [{ opacity: 0 }];
   }
 
-
   shouldComponentUpdate(nextProps) {
     const { activeRowIndex } = this.props;
 
     return activeRowIndex !== nextProps.activeRowIndex;
   }
-
 
   render() {
     const { activeRowIndex, tableData, hasUpdated } = this.props;
@@ -38,16 +36,24 @@ export default class Sidepane extends Component {
         leave={leave}
       >
         {activeRowIndex =>
-          typeof activeRowIndex === 'number' && (props => (
-            <animated.div className="sidepane-animation-container" style={props}>
+          typeof activeRowIndex === 'number' &&
+          (props => (
+            <animated.div
+              className="sidepane-animation-container"
+              style={props}
+            >
               <article className="sidepane">
                 <h2>{tableData[activeRowIndex].name}</h2>
-                <p>{`${tableData[activeRowIndex].name} is a ${tableData[activeRowIndex].age} year old ${tableData[activeRowIndex].job} living in ${tableData[activeRowIndex].location}.`}</p>
+                <p>{`${tableData[activeRowIndex].name} is a ${
+                  tableData[activeRowIndex].age
+                } year old ${tableData[activeRowIndex].job} living in ${
+                  tableData[activeRowIndex].location
+                }.`}</p>
               </article>
-            </animated.div>)
-          )
+            </animated.div>
+          ))
         }
       </Transition>
-    )
+    );
   }
 }
