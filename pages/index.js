@@ -19,9 +19,14 @@ export default class App extends Component {
                 <a>Update transitions</a>
               </Link>
             </li>
+            <li>
+              <Link href="/trail">
+                <a>Trail transitions</a>
+              </Link>
+            </li>
           </ol>
         </nav>
       </MainLayout>
-    )
+    );
   }
 }

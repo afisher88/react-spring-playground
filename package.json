@@ -21,14 +21,14 @@
   },
   "homepage": "https://github.com/afisher88/react-spring-playground#readme",
   "dependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.3",
     "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.6",
-    "next": "^8.0.1",
-    "next-prefixed": "0.0.5",
+    "next": "^8.0.4",
+    "next-prefixed": "0.0.9",
     "node-sass": "^4.11.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-spring": "^8.0.7"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-spring": "^8.0.19"
   }
 }
