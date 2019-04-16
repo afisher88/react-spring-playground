@@ -5,6 +5,10 @@
   .transition-container__inner {
     min-height: 150px; // Box height
   }
+
+  .button-primary {
+    z-index: 10;
+  }
 }
 
 .transition-container__header {

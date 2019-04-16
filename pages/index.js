@@ -20,8 +20,8 @@ export default class App extends Component {
               </Link>
             </li>
             <li>
-              <Link href="/trail">
-                <a>Trail transitions</a>
+              <Link href="/chain">
+                <a>Chain animations</a>
               </Link>
             </li>
           </ol>
