@@ -14,16 +14,17 @@ export default function Chain() {
   const [toggle, setToggle] = useState(false);
   const animation1Ref = useRef();
   const animation1Props = useSpring({
-    config: animationConfig,
+    // config: animationConfig,
     ref: animation1Ref,
-    opacity: toggle ? 0 : 1,
-    width: toggle ? 0 : 100
+    // opacity: toggle ? 0 : 1,
+    width: toggle ? 100 : 500
   });
 
   const animation2Ref = useRef();
   const animation2Props = useSpring({
-    config: animationConfig,
-    display: toggle ? 'none' : 'block',
+    // config: animationConfig,
+    // display: toggle ? 'none' : 'block',
+    height: toggle ? 100 : 50,
     ref: animation2Ref
   });
 
@@ -56,7 +57,7 @@ export default function Chain() {
           <TheBox />
         </animated.div>
         <animated.div style={{ ...animation2Props }}>
-          <TheBox />
+          <TheBox style={{ height: '100%', boxSizing: 'content-box' }} />
         </animated.div>
       </TransitionContainer>
     </MainLayout>
